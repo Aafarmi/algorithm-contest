@@ -205,3 +205,39 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# Python 基础
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# AI/ML 项目专用
+*.pth
+*.bin
+*.onnx
+*.h5
+dataset/
+data/
+logs/
+runs/
+wandb/
+tensorboard/
+checkpoints/
+
+# 临时文件
+*.log
+*.tmp
+*.temp
+__MACOSX/
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
