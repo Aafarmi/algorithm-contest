@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int i=0;
+    int n=0;
+    cin>>n;
+    int m=n/8;
+    for(i=m;i>=0;i--)
+    {
+        int k=n-i*8;
+        if(k%6==0)
+        {
+            cout<<i+k/6;
+            return 0;
+        }
+    }
+    cout<<-1;
+    return 0;
+}
+
