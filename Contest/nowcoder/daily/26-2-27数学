@@ -1,6 +1,6 @@
+/*https://www.nowcoder.com/practice/73e0552b78474a9086781e47f4e01d73?channelPut=tracker2*/
 #include <iostream>
 using namespace std;
-
 int main() 
 {
     int i=0;
