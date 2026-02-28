@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "C/C++: g++.exe 生成活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+            // 必须与 tasks.json 中的输出路径完全一致
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true, // 设置为 true 可在独立的黑窗口运行
+            "MIMode": "gdb",
+            // 确保该路径指向你安装的 mingw64 下的 gdb.exe
+            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            // 这里的名称必须与 tasks.json 中的 label 完全匹配
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+        }
+    ]
+}

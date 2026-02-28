@@ -15,7 +15,36 @@ void Srend(){
     vector<int> a(n+1);
     stack<int> st;
     vector<int> f(n+1),b(n+1);
-    
+    f[1]=0;b[n]=0;
+    for(int i=1;i<=n;i++) cin>>a[i];
+    for(int i=1;i<=n;i++){
+        while(!st.empty()&&a[st.top()]<=a[i])
+            st.pop();
+        if(st.empty()){
+            f[i]=0;st.push(i);
+            continue;
+        }
+        f[i]=f[st.top()]+1;
+        st.push(i);
+    }
+    while(!st.empty()) st.pop();
+    for(int i=n;i>=1;i--){
+        while(!st.empty()&&a[st.top()]<=a[i])
+            st.pop();
+        if(st.empty()){
+            b[i]=0;st.push(i);
+            continue;
+        }
+        b[i]=b[st.top()]+1;
+        st.push(i);
+    }
+    int mx=0;
+    for(int i=1;i<=n;i++){
+        int tmp=f[i]+b[i];
+        mx=max(mx,tmp);
+    }
+    int ans=n-(mx+1);
+    cout<<ans<<endl;
 } 
 signed main(){
     ios_base::sync_with_stdio(false);
