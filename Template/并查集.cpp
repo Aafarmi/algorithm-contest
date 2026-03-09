@@ -1,18 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N=1e5+7;
-struct dsu{
-	vector<int> fa;
-	explicit dsu(int size) : fa(size){iota(fa.begin(),fa.end(),0);}
-	public:
-		int find(int x);
-		void unite(int x,int y);
+//#define int long long
+#define ll long long
+#define fr first
+#define sc second
+#define endl '\n'
+#define all(arr) arr.begin(),arr.end()
+typedef pair<int,int> P;
+const int INF=0x3f3f3f3f;
+const int mod=1e9+7;
+const int N=2e5+7;
+struct DSU{
+    vector<int> fa,sz;
+    DSU(int size) : fa(size+1),sz(size,1){iota(all(fa),0);}
+    public:
+        int findfa(int x);
+        void unite(int x,int y);
 };
-int dsu::find(int x){
-	return fa[x]==x?x:fa[x]=find(fa[x]);
+int DSU::findfa(int x){
+    return fa[x]==x?x:fa[x]=findfa(fa[x]);
 }
-void dsu::unite(int x,int y){
-	fa[find(x)]=find(y);
+void DSU::unite(int x,int y){
+    x=findfa(x);
+    y=findfa(y);
+    if(x==y) return;
+    if(sz[x]<sz[y]) swap(x,y);
+    fa[y]=x;
+    sz[x]+=sz[y];
 }
 int n,m,cnt;
 bool vis[N];

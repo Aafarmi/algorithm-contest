@@ -2,9 +2,11 @@
 using namespace std;
 //#define int long long
 #define ll long long
+#define db double
 #define fr first
 #define sc second
 #define endl '\n'
+#define all(arr) arr.begin(),arr.end()
 typedef pair<int,int> P;
 const int INF=0x3f3f3f3f;
 const int mod=1e9+7;
