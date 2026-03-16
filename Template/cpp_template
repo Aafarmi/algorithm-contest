@@ -9,7 +9,8 @@ using namespace std;
 #define all(arr) arr.begin(),arr.end()
 typedef pair<int,int> P;
 const int INF=0x3f3f3f3f;
-const int mod=1e9+7;
+const ll mod=1e9+7;
+const ll _mod=998244353;
 const int N=2e5+7;
 void Srend(){
 } 
