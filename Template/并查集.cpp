@@ -1,3 +1,4 @@
+//并查集，启发式合并
 #include <bits/stdc++.h>
 using namespace std;
 //#define int long long
