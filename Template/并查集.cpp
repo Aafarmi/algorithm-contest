@@ -11,23 +11,23 @@ typedef pair<int,int> P;
 const int INF=0x3f3f3f3f;
 const int mod=1e9+7;
 const int N=2e5+7;
-struct DSU{
+struct MakeDsu{
     vector<int> fa,sz;
-    DSU(int size) : fa(size+1),sz(size,1){iota(all(fa),0);}
+    MakeDsu(int size) : fa(size+1),sz(size+1,1){iota(all(fa),0);}
     public:
         int findfa(int x);
         void unite(int x,int y);
 };
-int DSU::findfa(int x){
+int MakeDsu::findfa(int x){
     return fa[x]==x?x:fa[x]=findfa(fa[x]);
 }
-void DSU::unite(int x,int y){
-    x=findfa(x);
-    y=findfa(y);
-    if(x==y) return;
-    if(sz[x]<sz[y]) swap(x,y);
-    fa[y]=x;
-    sz[x]+=sz[y];
+void MakeDsu::unite(int x,int y){
+    int a=findfa(x);
+    int b=findfa(y);
+    if(a==b) return;
+    if(sz[a]<sz[b]) swap(a,b);
+    fa[b]=a;
+    sz[a]+=sz[b];
 }
 int n,m,cnt;
 bool vis[N];

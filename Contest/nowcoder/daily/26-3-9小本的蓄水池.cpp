@@ -11,21 +11,21 @@ typedef pair<int,int> P;
 const int INF=0x3f3f3f3f;
 const int mod=1e9+7;
 const int N=2e5+7;
-struct DSU{
+struct MakeDsu{
     vector<int> fa,sz,val;
-    DSU(int size) : fa(size+1),sz(size+1,1){iota(all(fa),0);}
+    MakeDsu(int size) : fa(size+1),sz(size+1,1){iota(all(fa),0);}
     public:
         void init(vector<int>& a,int n);
         int findfa(int x);
         void unite(int x,int y);
 };
-void DSU::init(vector<int>& a,int n){
+void MakeDsu::init(vector<int>& a,int n){
     for(int i=1;i<=n;i++) val[i]=a[i];
 }
-int DSU::findfa(int x){
+int MakeDsu::findfa(int x){
     return fa[x]==x?x:fa[x]=findfa(fa[x]);
 }
-void DSU::unite(int x,int y){
+void MakeDsu::unite(int x,int y){
     x=findfa(x);
     y=findfa(y);
     if(x==y) return;
@@ -37,7 +37,7 @@ void DSU::unite(int x,int y){
 void Srend(){
     int n,m;cin>>n>>m;
     vector<int> a(n+1),pre(n+1);
-    DSU dsu(n);dsu.init(a,n);
+    MakeDsu dsu(n);dsu.init(a,n);
     for(int i=1;i<=n;i++) cin>>a[i];
     while(m--){
         int op;cin>>op;

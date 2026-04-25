@@ -1,10 +1,11 @@
 //1-based
 #include <bits/stdc++.h>
 using namespace std;
+const int N=1e5+7;
 struct segtree{
     int l,r,val=0,lz=0;//l,e代表线段的左右端点，val代表此线段的数值
-}tree[4007];
-int a[1000];
+}tree[4*N+7];
+int a[N+7];
 void build(int i,int l,int r){//递归构建
     tree[i].l=l;tree[i].r=r;
     if(l==r){
