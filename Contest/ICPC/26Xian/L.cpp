@@ -14,18 +14,20 @@ const ll _mod=998244353;
 const int N=2e5+7;
 void Srend(){
     int n;cin>>n;
-    vector<int> a(n+1);bool ok=false;
-    for(int i=1;i<=n;i++){
-        cin>>a[i];
-        if(a[i]==100) ok=true;
-    }
-    if(ok) cout<<"YES\n";
-    else cout<<"NO\n";
+    string s;
+    for(int i=1;i<=n;i++) s+="D";
+    for(int i=1;i<=n;i++) s+="RDDLL";
+    for(int i=1;i<=n;i++) s+="D";
+    for(int i=1;i<=n;i++) s+="URRDL";
+    s+="DL";
+    for(int i=1;i<=n;i++) s+="D";
+    cout<<s.size()<<endl;
+    cout<<s<<endl;
 } 
 signed main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t=1;
-    cin>>t;
+    //cin>>t;
     while(t--) Srend();
 }
